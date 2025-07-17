@@ -7,9 +7,8 @@
     "mongodb": "^6.17.0",
     "path": "^0.12.7"
   },
-  "main": "login.js",
+  "main": "",
   "scripts": {
-    "start": "node login.js"
   },
   "name": "proje1",
   "version": "1.0.0",

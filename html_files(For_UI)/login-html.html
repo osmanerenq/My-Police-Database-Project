@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Police Database Login</title>
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/files(images_etc.)/police_favicon.png">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Afacad">
   <style>
     :root {
@@ -16,7 +16,7 @@
     }
 
     body {
-      font-family: 'Afacad';
+      font-family: 'Afacad',serif;
       font-weight: bold;
       font-size: 20px;
       background: var(--background-color);
@@ -118,7 +118,7 @@
       border-radius: 8px;
       background-color: var(--primary-color);
       color: var(--background-color);
-      font-family: Afacad;
+      font-family: Afacad,serif;
       font-size: 18px;
       font-weight: 200;
       cursor: pointer;
@@ -138,23 +138,9 @@
       transform: translateY(0px);
       box-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
     }
-
-    .message {
-      margin-top: 25px;
-      color: #ff3b3b;
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      text-shadow: 0 0 5px rgba(255, 59, 59, 0.5);
-    }
-
-    .message.visible {
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
-
 <div class="login-container">
   <h2>Police Database - Login</h2>
   <form id="loginForm">
@@ -168,7 +154,6 @@
     </div>
     <button type="submit">Enter the database</button>
   </form>
-  <p id="errorMessage" class="message"></p>
 </div>
 <script src= " " ></script>
 </body>
