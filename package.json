@@ -9,11 +9,12 @@
   },
   "main": "",
   "scripts": {
+    "start_formbackend" : "node Javascripts/node.js(includes_express)/form_backend_node.js"
   },
-  "name": "proje1",
+  "name": "Police-Database-Project",
   "version": "1.0.0",
   "keywords": [],
   "author": "Osman Eren",
   "license": "ISC",
-  "description": "Bu mükemmel bir proje "
+  "description": "My First Project :)"
 }
