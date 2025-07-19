@@ -4,12 +4,12 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.17.0",
     "path": "^0.12.7"
   },
   "main": "",
-  "scripts": {
-  },
+  "scripts": {},
   "name": "proje1",
   "version": "1.0.0",
   "keywords": [],

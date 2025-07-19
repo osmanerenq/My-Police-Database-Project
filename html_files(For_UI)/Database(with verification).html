@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korunan Sayfa</title>
+
+</head>
+<body>
+<h1>Hoş Geldiniz!</h1>
+<p>Bu sayfa token ile deneme aşamasındadır.Giriş yapmayanlar giremez!</p>
+
+<script>
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert("Please log in before entering the database!");
+        window.location.href = '/Police-Database-Project/html_files(For_UI)/login-html.html';
+    }
+</script>
+</body>
+</html>
