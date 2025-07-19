@@ -11,8 +11,10 @@ form.addEventListener("submit", async (e) => {
         body: JSON.stringify(data)
     })
     const res = await req.json();
-    if (res.status === 200) {
+    if (req.status === 200) {
         alert("Logging in successfully.");
+        localStorage.setItem("token", res.token);
+        window.location.href = "/html_files(For_UI)/Database(with verification).html";
     }
     else {
         alert("ID or email is wrong.");
