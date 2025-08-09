@@ -3,19 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korunan Sayfa</title>
-
+    <title>Police Database</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0f1f, #08121f);
+            font-family: 'Segoe UI', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+        .container {
+            background-color: rgba(15, 20, 35, 0.95);
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            width: 100%;
+            max-width: 900px;
+        }
+        h2 {
+            text-align: center;
+            color: #00f7ff;
+            text-shadow: 0 0 8px #00f7ff;
+            margin-bottom: 20px;
+        }
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 14px;
+            color: #ccc;
+        }
+        input, select {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #00f7ff33;
+            background-color: #111726;
+            color: #fff;
+            width: 100%;
+            outline: none;
+        }
+        input:focus, select:focus {
+            border-color: #00f7ff;
+            box-shadow: 0 0 5px #00f7ff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #00f7ff22;
+            text-align: left;
+        }
+        th {
+            background-color: #0f1629;
+            color: #00f7ff;
+            text-shadow: 0 0 5px #00f7ff;
+        }
+        tr:hover {
+            background-color: #0a1425;
+        }
+        .btn {
+            background-color: #00f7ff;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #00c4cc;
+        }
+    </style>
 </head>
 <body>
-<h1>Hoş Geldiniz!</h1>
-<p>Bu sayfa token ile deneme aşamasındadır.Giriş yapmayanlar giremez!</p>
+<div class="container">
+    <h2>Police Database </h2>
+    <div class="filters">
+        <div>
+            <label>Ad</label>
+            <input type="text" id="filterName" placeholder="Ad girin">
+        </div>
+        <div>
+            <label>Soyad</label>
+            <input type="text" id="filterSurname" placeholder="Soyad girin">
+        </div>
+        <div>
+            <label>Kan Grubu</label>
+            <select id="filterBlood">
+                <option value="">Tümü</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>0+</option>
+                <option>0-</option>
+            </select>
+        </div>
+        <div>
+            <label>Saç Rengi</label>
+            <select id="filterHair">
+                <option value="">Tümü</option>
+                <option>Kumral</option>
+                <option>Siyah</option>
+                <option>Sarı</option>
+                <option>Kızıl</option>
+                <option>Beyaz</option>
+            </select>
+        </div>
+        <div>
+            <label>Doğum Şehri</label>
+            <input type="text" id="filterCity" placeholder="Şehir girin">
+        </div>
+    </div>
+    <button class="btn" onclick="applyFilters()">Filtrele</button>
 
+    <table>
+        <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Kan Grubu</th>
+            <th>Saç Rengi</th>
+            <th>Doğum Şehri</th>
+        </tr>
+        </thead>
+        <tbody id="dataBody">
+        </tbody>
+    </table>
+</div>
 <script>
-    const token = localStorage.getItem('token');
-    if (!token) {
-        alert("Please log in before entering the database!");
-        window.location.href = '/Police-Database-Project/html_files(For_UI)/login-html.html';
+    function applyFilters(){
+        alert("Filtreleme fonksiyonu eklenecek");
     }
+
 </script>
 </body>
 </html>
