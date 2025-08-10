@@ -154,7 +154,7 @@
         });
         const response = await res.json();
         if (res.status === 200){
-            alert("Sisteme Hoşgeldiniz " + response.user );
+            alert("Sisteme Hoşgeldiniz " + response.userData.username );
         }
         else {
             alert("Tokeniniz hatalı veya süresi dolmuş!");
