@@ -2,9 +2,11 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
 const port = 33344;
+const cors = require('cors');
 app.use(express.json());
+app.use(cors());
 const JWT_SECRET = "U6;tyg4MHF#Xx5'Gl@q_7CL1[d%R";
-app.post('/verify-token', (req, res) => {
+app.get('/verify-token', (req, res) => {
     const authHeader = req.headers['authorization'];
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {

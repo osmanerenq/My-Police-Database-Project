@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Police Database</title>
+    <link rel="icon" type="image/x-icon" href="/files(images_etc.)/police_favicon.png?v=2">
     <style>
         body {
             background: linear-gradient(135deg, #0a0f1f, #08121f);
@@ -143,11 +144,53 @@
     </table>
 </div>
 <script>
-
-    function applyFilters(){
-        alert("Filtreleme fonksiyonu eklenecek");
+    async function verification(){
+        const token = localStorage.getItem('token');
+        const res = await fetch('http://localhost:33344/verify-token', {
+            method: "GET",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        const response = await res.json();
+        if (res.status === 200){
+            alert("Sisteme Hoşgeldiniz " + response.user );
+        }
+        else {
+            alert("Tokeniniz hatalı veya süresi dolmuş!");
+            window.location.href = "login-html.html";
+        }
     }
+    verification();
+    async function applyFilters(){
+        const ad = document.getElementById('filterName').value;
+        const soyad = document.getElementById('filterSurname').value;
+        const kan = document.getElementById('filterBlood').value;
+        const sac = document.getElementById('filterHair').value;
+        const sehir = document.getElementById('filterCity').value;
 
+        const params = new URLSearchParams({ ad, soyad, kan, sac, sehir });
+
+        const res = await fetch(`http://localhost:3000/api/citizens?${params}`, {
+            method: 'POST'
+        });
+        const data = await res.json();
+
+        const tbody = document.getElementById('dataBody');
+        tbody.innerHTML = '';
+        data.forEach(p => {
+            const row = `
+            <tr>
+                <td>${p.ad}</td>
+                <td>${p.soyad}</td>
+                <td>${p.kanGrubu}</td>
+                <td>${p.sacRengi}</td>
+                <td>${p.dogumSehri}</td>
+            </tr>
+        `;
+            tbody.innerHTML += row;
+        });
+    }
 </script>
 </body>
 </html>
