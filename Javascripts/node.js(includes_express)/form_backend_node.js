@@ -27,7 +27,7 @@ app.post("/", async (req, res) => {
     try {
         const found = await collect.findOne({ username: username, password: password });
         if (found) {
-            const token = jeb.sign({ username: username }, secretKey, { expiresIn: '40m' });
+            const token = jeb.sign({ username: username }, secretKey, { expiresIn: '30s' });
             res.status(200).json({token,message: "Logged in successfully"});
             console.log("User logged in successfully");
         }
